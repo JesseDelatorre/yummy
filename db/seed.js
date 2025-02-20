@@ -1,5 +1,5 @@
 const client = require('./client.js');
-
+const { createFood } = require('./food.js');
 
 
 
@@ -40,6 +40,13 @@ console.log('tables dropped');
 console.log('creating table');
  await createTable();
 console.log('table created');
+
+console.log('creating food');
+await createFood('Carrot Cake', 100, 'Many many carrots, no bunnies', 'carrots, cake');
+await createFood('Banana Bread', 333, 'many bananas, no monkeys', 'bananas, bread');
+await createFood('Cwoisaan', 1, 'French goodness', 'butter, dough');
+await createFood('Tiramisu', 222, 'Coffee flavored cake', 'coffee, lady fingers');
+console.log('food created');
 
 
   await client.end();
